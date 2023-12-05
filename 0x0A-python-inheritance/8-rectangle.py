@@ -29,6 +29,7 @@ class Rectangle(BaseGeometry):
     A BaseGeometry subclass with width and height attributes.
     '''
     def __init__(self, width, height):
+        ''' Initializes Rectangle objects.'''
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
