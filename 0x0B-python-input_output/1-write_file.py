@@ -10,4 +10,3 @@ def write_file(filename="", text=""):
     with open(filename, 'w', encoding="utf-8") as file_name:
         chars_written = file_name.write(text)
         return chars_written
-
