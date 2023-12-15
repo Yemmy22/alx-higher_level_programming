@@ -123,3 +123,13 @@ class Rectangle(Base):
         Return the product of a rectangle's width and height.
         '''
         return self.__width * self.__height
+
+    def display(self):
+        '''
+        Displays the width and height of a rectangle,
+        represented by '#'.
+        '''
+        for i in range(self.__height):
+            for j in range(self.__width):
+                print('#', end='')
+            print()
