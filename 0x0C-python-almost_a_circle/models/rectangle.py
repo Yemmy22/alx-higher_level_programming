@@ -1,11 +1,14 @@
 #!/usr/bin/python3
 '''
-A Rectangle class derived from Base class.
+A Rectangle class module.
 '''
 from models.base import Base
 
 
 class Rectangle(Base):
+    '''
+    A rectangle class inheriting Base Class.
+    '''
     @property
     def width(self):
         '''
