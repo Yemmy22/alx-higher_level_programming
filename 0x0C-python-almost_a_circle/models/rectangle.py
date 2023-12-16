@@ -137,7 +137,11 @@ class Rectangle(Base):
         Displays the width and height of a rectangle,
         represented by '#'.
         '''
+        for new_line in range(self.__y):
+            print()
         for i in range(self.__height):
+            for space in range(self.__x):
+                print(' ', end='')
             for j in range(self.__width):
                 print('#', end='')
             print()
