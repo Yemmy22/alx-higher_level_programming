@@ -48,7 +48,7 @@ class Rectangle(Base):
             self.__height = value
 
     @property
-    def x(self, value):
+    def x(self):
         '''
         Return the value of private attribute x.
         '''
@@ -87,7 +87,7 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         '''
-        Initilaizes a rectangle.
+        Initializes a rectangle.
         '''
         super().__init__(id)
         if type(width) != int:
@@ -145,3 +145,18 @@ class Rectangle(Base):
             for j in range(self.__width):
                 print('#', end='')
             print()
+
+    def update(self, *args):
+        '''
+        Modifies a rectangle's string.
+        '''
+        if len(args) == 1:
+            self.id = args[0]
+        if len(args) == 2:
+            self.__width = args[1]
+        if len(args) == 3:
+            self.__height = args[2]
+        if len(args) == 4:
+            self.__x = args[3]
+        if len(args) == 5:
+            self.__y = args[4]
