@@ -11,8 +11,12 @@ def text_indentation(text):
     if type(text) != str:
         raise TypeError('text must be a string')
     delimeter = ['.', '?', ':']
+    prev = None
     for i in text:
+        if prev in delimeter and i == ' ':
+            continue
         print('{}'.format(i), end='')
         for j in delimeter:
+            prev = i
             if i == j:
                 print('\n')
