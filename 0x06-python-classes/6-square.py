@@ -26,14 +26,14 @@ class Square:
         return self.__size
 
     @size.setter
-    def size(self, size):
+    def size(self, value):
         ''' Checks and sets the value of size as positive integer value.'''
-        if type(size) is not int:
+        if type(value) is not int:
             raise TypeError('size must be an integer')
-        elif size < 0:
+        elif value < 0:
             raise ValueError('size must be >= 0')
         else:
-            self.__size = size
+            self.__size = value
 
     @property
     def position(self):
@@ -42,11 +42,12 @@ class Square:
     @position.setter
     def position(self, value):
         if isinstance(value, tuple) and len(value) == 2:
-            if value[0] >= 0 and value[1] >= 0:
+            if (type(value[0]) is int and value[0] >= 0)\
+                    and (type(value[1]) is int and value[1] >= 0):
                 self.__position = value
             else:
-                raise TypeError('position must be a tuple of 2 positive\
- integers')
+                raise TypeError('position must be a tuple of\
+ 2 positive integers')
         else:
             raise TypeError('position must be a tuple of 2 positive integers')
 
@@ -55,15 +56,13 @@ class Square:
         return self.__size * self.__size
 
     def my_print(self):
-        ''' Print to stdout a square with size represented by '#'. '''
+        '''
+        Print to stdout a square with size represented by "#".
+        '''
         if self.__size == 0:
             print()
-        i = j = 0
-        for i in range(self.__size):
-            if self.__position[1] > 0:
-                print(self.__position[0] * "_", end='')
-            else:
-                print(self.__position[0] * " ", end='')
-            for j in range(self.__size):
-                print('#', end='')
-            print()
+        else:
+            for i in range(self.__position[1]):
+                print()
+            for i in range(self.__size):
+                print(" " * self.__position[0] + "#" * self.__size)
