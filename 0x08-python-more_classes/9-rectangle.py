@@ -14,8 +14,8 @@ class Rectangle:
         Initialize rectangle instances with attribute
         priavte attribute 'width' and 'height'.
         '''
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
         self.print_symbol = Rectangle.print_symbol
 
