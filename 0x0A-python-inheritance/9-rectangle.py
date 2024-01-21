@@ -8,8 +8,7 @@ class BaseGeometry:
     '''Define BaseGeometry Class.'''
     def area(self, width, height):
         ''' Raises exception when invoked.'''
-        '''raise Exception('area() is not implemented')'''
-        return self.width * self.height
+        raise Exception('area() is not implemented')
 
     def integer_validator(self, name, value):
         '''
