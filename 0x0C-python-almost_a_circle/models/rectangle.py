@@ -95,28 +95,28 @@ class Rectangle(Base):
         elif width <= 0:
             raise ValueError('width must be > 0')
         else:
-            self.__width = width
+            self.width = width
 
         if type(height) != int:
             raise TypeError('height must be an integer')
         elif height <= 0:
             raise ValueError('height must be > 0')
         else:
-            self.__height = height
+            self.height = height
 
         if type(x) != int:
             raise TypeError('x must be an integer')
         elif x < 0:
             raise ValueError('x must be >= 0')
         else:
-            self.__x = x
+            self.x = x
 
         if type(y) != int:
             raise TypeError('y must be an integer')
         elif y < 0:
             raise ValueError('y must be >= 0')
         else:
-            self.__y = y
+            self.y = y
 
     def __str__(self):
         '''
@@ -146,17 +146,30 @@ class Rectangle(Base):
                 print('#', end='')
             print()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         '''
         Modifies a rectangle's string.
         '''
-        if len(args) == 1:
-            self.id = args[0]
-        if len(args) == 2:
-            self.__width = args[1]
-        if len(args) == 3:
-            self.__height = args[2]
-        if len(args) == 4:
-            self.__x = args[3]
-        if len(args) == 5:
-            self.__y = args[4]
+        if args:
+            if len(args) == 1:
+                self.id = args[0]
+            if len(args) == 2:
+                self.__width = args[1]
+            if len(args) == 3:
+                self.__height = args[2]
+            if len(args) == 4:
+                self.__x = args[3]
+            if len(args) == 5:
+                self.__y = args[4]
+        elif kwargs and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "width":
+                    self.__width = value
+                if key == "height":
+                    self.__height = value
+                if key == "x":
+                    self.__x = value
+                if key == "y":
+                    self.__y = value
+                if key == "id":
+                    self.id = value
