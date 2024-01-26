@@ -52,3 +52,14 @@ class Base:
             filename = "{}.json".format(cls.__name__, end='')
             with open(filename, 'w', encoding='utf-8') as f:
                 f.write(json_dict_list)
+
+    @staticmethod
+    def from_json_string(json_string):
+        '''
+        Returns an object of base subclasses,
+        from a deserialized json string.
+        '''
+        if json_string is None:
+            return []
+        else:
+            return json.loads(json_string)
