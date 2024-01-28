@@ -3,6 +3,8 @@
 A Base class module.
 '''
 import json
+import sys
+import os
 
 
 class Base:
@@ -76,3 +78,23 @@ class Base:
             obj = cls(1, 1)
         obj.update(**dictionary)
         return obj
+
+    @classmethod
+    def load_from_file(cls):
+        '''
+        Reads a json format string from a file, deserialises the
+        string to a python dict and uses the data to
+        instantiate subclassess of the base class.
+        '''
+        filename = "{}.json".format(cls.__name__)
+        instance_list = []
+        if not os.path.exists(filename):
+            return instance_list
+        else:
+            with open(filename, 'r', encoding='utf-8') as f:
+                json_str = f.read()
+
+        obj_list = cls.from_json_string(json_str)
+        for obj in obj_list:
+            instance_list.append(cls.create(**obj))
+        return instance_list
