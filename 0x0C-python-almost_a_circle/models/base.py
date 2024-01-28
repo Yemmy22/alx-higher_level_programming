@@ -63,3 +63,14 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+
+    @classmethod
+    def create(cls, **dictionary):
+        '''
+        Returns an instantiated object of the subclasses of the
+        base class with updated attributes.
+        '''
+        obj = cls(1, 1, 0, id=None)
+        obj.update(**dictionary)
+        return obj
