@@ -1,20 +1,37 @@
->>> from 1-my_list import print_sorted
-"""
-
-        Prints the sorted list.
-	>>> from 1-my_list import print_sorted
-        >>> my_list = MyList()
-        >>> my_list.append(1)
-        >>> my_list.append(4)
-        >>> my_list.append(2)
-        >>> my_list.append(3)
-        >>> my_list.append(5)
-	>>> print(my_list)
-        [1, 4, 2, 3, 5]
-        >>> my_list.print_sorted()
-        [1, 2, 3, 4, 5]
-	>>> print(my_list)
-        [1, 4, 2, 3, 5]
-
-        print(sorted(self))
-"""
+>>> MyList = __import__('1-my_list').MyList
+>>> print(issubclass(MyList, list))
+True
+>>> my_list = MyList()
+>>> print(isinstance(my_list, MyList))
+True
+>>> print(isinstance(my_list.__str__(), str))
+True
+>>> my_list.print_sorted()
+[]
+>>> my_list.append(1)
+>>> print(my_list)
+[1]
+>>> my_list.append(4)
+>>> print(my_list)
+[1, 4]
+>>> my_list.append(2)
+>>> print(my_list)
+[1, 4, 2]
+>>> my_list.append(3)
+>>> print(my_list)
+[1, 4, 2, 3]
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list is my_list.print_sorted()
+[1, 2, 3, 4, 5]
+False
+>>> my_list.append(-5)
+>>> print(my_list)
+[1, 4, 2, 3, 5, -5]
+>>> my_list.print_sorted()
+[-5, 1, 2, 3, 4, 5]
