@@ -16,7 +16,6 @@ class BaseGeometry:
         Checks value is an integer greater than zero or raises
         exception if otherwise.
         '''
-        self.name = name
         if type(value) != int:
             raise TypeError(self.name + ' must be an integer')
         elif value <= 0:
