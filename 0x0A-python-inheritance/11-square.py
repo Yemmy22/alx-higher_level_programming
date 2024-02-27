@@ -16,11 +16,10 @@ class BaseGeometry:
         Checks value is an integer greater than zero or raises
         exception if otherwise.
         '''
-        self.name = name
         if type(value) != int:
-            raise TypeError(self.name + ' must be an integer')
+            raise TypeError(name + ' must be an integer')
         elif value <= 0:
-            raise ValueError(self.name + ' must be greater than 0')
+            raise ValueError(name + ' must be greater than 0')
 
 
 class Rectangle(BaseGeometry):
@@ -44,7 +43,8 @@ class Rectangle(BaseGeometry):
         '''
         Returns a user friendly representation of a Rectangle
         '''
-        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+        return "[{}] {}/{}"\
+            .format(self.__class__.__name__, self.__width, self.__height)
 
 
 class Square(Rectangle):
@@ -62,7 +62,8 @@ class Square(Rectangle):
         '''
         Returns a user friendly representation of a Square
         '''
-        return "[Square] {}/{}".format(self.__size, self.__size)
+        return "[{}] {}/{}"\
+            .format(self.__class__.__name__, self.__size, self.__size)
 
     def area(self):
         '''
