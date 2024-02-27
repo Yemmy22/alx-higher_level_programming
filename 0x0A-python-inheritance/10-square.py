@@ -9,7 +9,7 @@ class BaseGeometry:
     Define BaseGeometry Class.
     '''
 
-    def area(self, width, height):
+    def area(self):
         '''
         Raises exception when invoked.
         '''
@@ -47,7 +47,8 @@ class Rectangle(BaseGeometry):
         '''
         Returns a user friendly representation of a Rectangle
         '''
-        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+        return "[{}] {}/{}".\
+            format(self.__class__.__name__, self.__width, self.__height)
 
 
 class Square(Rectangle):
@@ -65,7 +66,8 @@ class Square(Rectangle):
         '''
         Returns a user friendly representation of a Square
         '''
-        return "[Rectangle] {}/{}".format(self.__size, self.__size)
+        return "[{}] {}/{}".\
+            format(self.__class__.__name__, self.__size, self.__size)
 
     def area(self):
         '''
