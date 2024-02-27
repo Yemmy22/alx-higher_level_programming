@@ -17,9 +17,9 @@ class BaseGeometry:
         exception if otherwise.
         '''
         if type(value) != int:
-            raise TypeError(self.name + ' must be an integer')
+            raise TypeError(name + ' must be an integer')
         elif value <= 0:
-            raise ValueError(self.name + ' must be greater than 0')
+            raise ValueError(name + ' must be greater than 0')
 
 
 class Rectangle(BaseGeometry):
