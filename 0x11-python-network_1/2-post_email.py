@@ -8,7 +8,7 @@ import urllib.request
 import urllib.parse
 
 if __name__ == "__main__":
-    
+
     url = sys.argv[1]
     data = {'email': sys.argv[2]}
     data = urllib.parse.urlencode(data)
