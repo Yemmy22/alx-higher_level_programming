@@ -13,7 +13,10 @@ if __name__ == "__main__":
     if len(argv) == 4:
         db = MySQLdb.connect("localhost", argv[1], argv[2], argv[3])
         cur = db.cursor()
-        cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id;")
+        # cur.execute("SELECT * FROM states\
+        # WHERE BINARY name LIKE 'N%' ORDER BY id ASC")
+        cur.execute("SELECT * FROM states WHERE\
+                ASCII(left(name, 1)) = ASCII('N') ORDER BY id ASC")
         rows = cur.fetchall()
         for row in rows:
             print(row)
