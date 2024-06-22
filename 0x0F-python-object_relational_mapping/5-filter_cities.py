@@ -27,3 +27,6 @@ if __name__ == "__main__":
                 if count < len(rows):
                     print(', ', end="")
         print()
+
+        cur.close()
+        db.close()
