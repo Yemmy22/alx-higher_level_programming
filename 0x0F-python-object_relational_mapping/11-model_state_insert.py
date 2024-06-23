@@ -23,7 +23,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    state_Louisiana = State(name="Louisiana", id="6")
+    state_Louisiana = State(name="Louisiana")
     session.add(state_Louisiana)
     state_id = session.query(State).filter_by(name="Louisiana").first()
     print(state_Louisiana.id)
