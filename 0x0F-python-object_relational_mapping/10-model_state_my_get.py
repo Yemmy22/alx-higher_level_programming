@@ -28,4 +28,4 @@ if __name__ == "__main__":
     if not state_list:
         print("Not found")
     else:
-        print("{}\n{}".format(state_list.name, state_list.id))
+        print("{}".format(state_list.id))
