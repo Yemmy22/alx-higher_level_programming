@@ -11,6 +11,7 @@ from relationship_state import Base, State
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 
+
 class City(Base):
     '''
     Subclass of declarative base class
