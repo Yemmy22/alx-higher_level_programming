@@ -6,6 +6,7 @@ An sqlalchemy module that creates a declarative base
 subclass to which a city database table will be mapped.
 '''
 
+
 from relationship_state import Base, State
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship

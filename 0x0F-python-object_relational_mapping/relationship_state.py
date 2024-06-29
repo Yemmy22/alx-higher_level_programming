@@ -5,6 +5,7 @@ An sqlalchemy module that creates a declarative base
 subclass to which a state database table will be mapped.
 '''
 
+
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
