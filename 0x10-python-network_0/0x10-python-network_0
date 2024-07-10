@@ -1,4 +1,0 @@
-#!/bin/bash
-# This script displays the size in byte of an http response.
-
-curl -sI 0.0.0.0:5000 | grep "Content-Length" | sed 's/^Content-Length: //'
