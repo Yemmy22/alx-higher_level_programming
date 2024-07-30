@@ -1,7 +1,14 @@
 #!/usr/bin/node
 
 let fs = require('fs')
-filename = process.argv[2]
-data = process.argv[3]
+const filepath = process.argv[2]
+let string = process.argv[3]
 
-console.log(process.argv.length);
+if (process.argv.length === 4) {
+	fs.writeFile(filepath, string, encoding='utf8', function (err, fd) {
+		if (err) {
+			console.error(err);
+		};
+
+	});
+};
