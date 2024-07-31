@@ -16,6 +16,7 @@ if (process.argv.length === 3) {
       for (const j of i.characters) {
         if (j === characterUrl + ID + '/') {
           count++;
+          break;
         }
       }
     }
