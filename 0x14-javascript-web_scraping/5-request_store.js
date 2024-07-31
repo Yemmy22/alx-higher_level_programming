@@ -8,7 +8,6 @@ if (process.argv.length === 4) {
     if (error) {
       console.error(error);
     }
-    console.log(body);
     fs.writeFile(process.argv[3], body, { encoding: 'utf8' }, (err) => {
       if (err) {
         console.error(err);
